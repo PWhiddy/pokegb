@@ -1,8 +1,8 @@
-pokegb: pokegb.cc
-	$(CC) -O2 -Wall -Wno-return-type -Wno-misleading-indentation -Wno-parentheses -o $@ $< -lSDL2
+pokegb: pokegb.c
+	gcc -O2 -Wall -Wno-return-type -Wno-misleading-indentation -Wno-parentheses -I/opt/homebrew/include/ -o $@ $< -lSDL2 -L/opt/homebrew/lib
 
 rom.sav: empty.sav
 	cp $< $@
 
 clean:
-	rm -f pokegb rom.sav
+	rm -f pokegb_c rom.sav
